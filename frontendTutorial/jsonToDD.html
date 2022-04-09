@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Bind JSON with Dropdown</title>
+    </head> 
+
+    <body>
+        <button onclick="populateSelect()">Populate DropDown</button>
+        
+        <select id="sel-id" onchange="show(this)">
+            <option value="">--Select--</option>
+        </select>
+
+        <p id="msg"></p>
+
+    </body>
+
+    <script>
+        function populateSelect(){
+            var birds = [
+                {
+                    "ID":"001",
+                    "BirdName":"Eurasian Dove"
+                },
+                {
+                    "ID":"002",
+                    "BirdName":"Eagle"
+                },
+                {
+                    "ID":"003",
+                    "BirdName":"Parrot"
+                }
+            ];
+
+            var element = document.getElementById("sel-id");
+            for(var i=0; i<birds.length; i++){
+                element.innerHTML = element.innerHTML + '<option value="' + birds[i]['ID'] +'">' + birds[i]['BirdName'] + '</option>';
+            }
+
+        }
+
+
+        function show(element){
+            var msg = document.getElementById("msg");
+            msg.innerHTML = 'Selected item: <b>' + element.options[element.selectedIndex].text + '</b> </br>' + 'ID: ' + element.value ;
+
+        }
+    </script>
+</html>

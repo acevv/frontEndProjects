@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Edit, Delete table</title>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="name_row1">Mila</td>
+                <td id="age_row1">20</td>
+                <td id="city_row1">Skopje</td>
+                <td>
+                    <input type="button" id="edit_btn1" value="Edit" onclick="editRow('1')">
+                    <input type="button" id="save_btn1" value="Save" onclick="saveRow('1')">
+                    <input type="button" id="delete_btn1" value="Delete" onclick="deleteRow('1')">
+                </td>
+            </tr>
+
+
+            <tr id="row2">
+                <td id="name_row2">Gjorgji</td>
+                <td id="age_row2">25</td>
+                <td id="city_row2">Skopje</td>
+                <td>
+                    <input type="button" id="edit_btn2" value="Edit" onclick="editRow('2')">
+                    <input type="button" id="save_btn2" value="Save" onclick="saveRow('2')">
+                    <input type="button" id="delete_btn2" value="Delete" onclick="deleteRow('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="name_row3">Goran</td>
+                <td id="age_row3">28</td>
+                <td id="city_row3">Skopje</td>
+                <td>
+                    <input type="button" id="edit_btn3" value="Edit" onclick="editRow('3')">
+                    <input type="button" id="save_btn3" value="Save" onclick="saveRow('3')">
+                    <input type="button" id="delete_btn3" value="Delete" onclick="deleteRow('3')">
+                </td>
+            </tr>
+                
+
+
+        </table>
+    </div>
+
+    <script src="editDelete.js"></script>
+
+</body>
+
+
+</html>

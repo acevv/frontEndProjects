@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tutorials example.</title>
+  <link rel="stylesheet" href="" />
+
+
+</head>
+
+<body>
+  <h3>Tutorials fetch example</h3>
+
+  <div>Fetch POST request </div>
+
+  <div>
+    <input type="text" class="" id="post-title" placeholder="Title">
+  </div>
+  <div>
+    <input type="text" class="" id="post-description" placeholder="Description">
+  </div>
+  <div>
+    <button class="" onclick="postData()">Post Data</button>
+    <button class="" onclick="clearPostOutput()">Clear</button>
+
+    <div id="postResult"></div>
+  </div>
+
+  <div>Fetch GET request</div>
+  <div>
+    <button class="" onclick="getAllData()">Get All</button>
+
+    <div>
+      <input type="text" id="get-id" class="" placeholder="GetById">
+      <button class="" onclick="getById()">Get by ID</button>
+    </div>
+
+    <div>
+      <input type="text" id="get-name" class="" placeholder="Find By name">
+      <button class="" onclick="getById()">Get by name</button>
+    </div>
+
+    <div id="getAllResult"></div>
+  </div>
+
+  <script src="tutorialFunctions.js"></script>
+  <div>Fetch PUT example</div>
+  <div>
+    <input type="text" class="" id="put-id" placeholder="Id"/>
+  </div>
+  <div>
+    <input type="text" class="" id="put-name" placeholder="Title"/>
+  </div>
+  <div>
+    <input type="text" class="" id="put-description" placeholder="Description"/>
+  </div>
+  <div>
+    <input type="checkbox" class="" id="" id="put-published" />
+    <label class="" for="put-published">Publish</label>
+  </div>
+  <div>
+    <button class="" onclick="putData()">Update</button>
+    <button class="" onclick="emptyPutOutput">Clear</button>
+  </div>
+
+  <div id="put-result"></div>
+  <div>Fetch DELETE example</div>
+  <div>
+    <button class="" onclick="deleteAll()">Delete All</button>
+  </div>
+
+  <div>
+    <input type="text" class="" id="delete-id" placeholder="Id"/>
+  </div>
+  <div>
+    <button class="" onclick="deleteById()">Delete By Id</button>
+  </div>
+
+  <div id="deleteAllResult"></div>
+</body>
+
+</html>

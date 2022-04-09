@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Checkbox enable disable example</title>
+</head>
+
+<body>
+    <label for="checkField">
+        <input type="checkbox" id="checkField" onclick="enableDisableField(this)" />
+    </label>
+    Name:
+    <input type="text" id="txtName" disabled="disabled" />
+</body>
+
+<script>
+    function enableDisableField(checkField){
+        var inputTextElement = document.getElementById("txtName");
+        inputTextElement.disabled = checkField.checked ? false : true;
+        if(!inputTextElement.disabled){
+            inputTextElement.focus();
+        }
+
+    }
+</script>
+
+</html>

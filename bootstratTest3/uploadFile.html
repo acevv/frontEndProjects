@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <script>
+        function htmlizeResponse(res) {
+            return (
+                '<div class="alert alert-secondary mt-2" role="alert"><pre>' + JSON.stringify(res, null, 2) +
+                '</pre></div>'
+            );
+        }
+        async function SavePhoto(inp) {
+            
+            let formData = new FormData();
+            let photo = inp.files[0];
+            let fileName = photo.name;
+            let result = document.getElementById("res");
+            result.innerHTML = "";
+            formData.append("file", photo, fileName);
+            formData.append("fileName", fileName);
+            console.log(photo.name);
+            const ctrl = new AbortController() // timeout
+            setTimeout(() => ctrl.abort(), 5000);
+            try {
+                let r = await fetch('http://localhost:8084/file/upload', {
+                    method: "POST",
+                    body: formData,
+                    signal: ctrl.signal
+                });
+                console.log('HTTP response code:', r.status);
+                const data = await r.json();
+                const res = {
+                    status: r.status + " " + r.statusText,
+                    headers: {
+                        "Content-Type": r.headers.get("Content-Type"),
+                        "Content-Length": r.headers.get("Content-Length"),
+                    },
+                    data: data,
+                };
+                result.innerHTML = htmlizeResponse(res);
+            } catch (e) {
+                console.log('Huston we have problem...:', e);
+            }
+        }
+    </script>
+    
+</head>
+
+
+<body>
+    <input id="image-file" type="file" onchange="SavePhoto(this)">
+    <div id="res"></div>
+</body>
+
+</html>
